@@ -12,7 +12,7 @@ class Loanapplication(BaseModel):
 @app.post('/predict')
 def predict_loan(application : Loanapplication):
 
-    if application.income> 50000 and application.employment_years > 3:
+    if application.income>= 50000 and application.employment_years >= 3 and application.age >= 21:
         decision = "Approved"
 
     else:
